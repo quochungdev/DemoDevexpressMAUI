@@ -1,0 +1,53 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:dxco="clr-namespace:DevExpress.Maui.Controls;assembly=DevExpress.Maui.Controls"
+                 xmlns:dxc="clr-namespace:DevExpress.Maui.Charts;assembly=DevExpress.Maui.Charts"
+                 xmlns:dxcv="clr-namespace:DevExpress.Maui.CollectionView;assembly=DevExpress.Maui.CollectionView"
+                 xmlns:dxsch="clr-namespace:DevExpress.Maui.Scheduler;assembly=DevExpress.Maui.Scheduler"
+                 xmlns:dxg="clr-namespace:DevExpress.Maui.DataGrid;assembly=DevExpress.Maui.DataGrid"
+                 xmlns:dxe="clr-namespace:DevExpress.Maui.Editors;assembly=DevExpress.Maui.Editors"
+                 xmlns:dxdf="clr-namespace:DevExpress.Maui.DataForm;assembly=DevExpress.Maui.Editors"
+                 xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+                 xmlns:local="clr-namespace:DemoDevExpress1"
+                 xmlns:views="clr-namespace:DemoDevExpress1.Pages"
+                 ios:Page.UseSafeArea="true"
+                 x:Class= "DemoDevExpress1.MainPage">
+    <ScrollView>
+        <StackLayout>
+            <StackLayout Padding="10" >
+                <Label Text="Add Category" FontSize="30" TextColor="Black" BackgroundColor="White" FontAttributes="Bold" Margin="10" />
+                <Entry Placeholder="Category name" x:Name="NameEntry" />
+                <Entry Placeholder="Price" x:Name="PriceEntry" />
+                <Entry Placeholder="Image" x:Name="ImageEntry" />
+            </StackLayout>
+
+            <dxco:SimpleButton Margin="10" Text = "Add Category" 
+                   Icon = "add" 
+                   BorderThickness="2"
+                   BorderColor="Black"
+                   PressedBorderColor="DarkOrange"
+                   DisabledBorderColor="DarkGray"
+                   TextColor="Black"
+                   PressedTextColor="White"
+                   DisabledTextColor="DarkGray"
+                   IconColor="Black"
+                   PressedIconColor="White"
+                   DisabledIconColor="DarkGray"
+                   BackgroundColor="Beige"
+                   DisabledBackgroundColor="Brown"
+                   PressedBackgroundColor="Gray"
+                   CornerMode = "Round"        
+                   CornerRadius="10"
+                   Clicked = "OnAddCategoryClicked" />
+
+            <dxg:DataGridView x:Name="CategoryDataGrid" RowTapCommand="{Binding Source={RelativeSource Mode=Self}, Path=Commands.ShowDetailEditForm}">
+                <dxg:DataGridView.Columns>
+                    <dxg:TextColumn FieldName="Id" Caption="ID" IsReadOnly="True" />
+                    <dxg:TextColumn FieldName="Name" Caption="Name" IsReadOnly="True"/>
+                    <dxg:TextColumn FieldName="Price" Caption="Price" IsReadOnly="True" />
+                    <dxg:ImageColumn FieldName="ImageUrl" Caption="Image" IsReadOnly="True" />
+                </dxg:DataGridView.Columns>
+            </dxg:DataGridView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

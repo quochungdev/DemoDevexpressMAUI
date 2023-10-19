@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="DemoDevExpress1.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DemoDevExpress1"  
+    xmlns:views="clr-namespace:DemoDevExpress1.Pages"  
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarBackgroundColor="AntiqueWhite"
+    Shell.TabBarTitleColor="OrangeRed">
+    <TabBar>
+        <ShellContent
+         Icon="add"
+         Title="MainPage"
+         ContentTemplate="{DataTemplate local:MainPage}"
+         Route="MainPage" />
+        <ShellContent
+         Icon="add"
+         Title="Category"
+         ContentTemplate="{DataTemplate views:CategoriesPage}"
+         Route="CategoriesPage" />
+        <ShellContent
+         Icon="add"
+         Title="Setting"
+         ContentTemplate="{DataTemplate views:Setting}"
+         Route="Setting" />
+    </TabBar>
+
+</Shell>
